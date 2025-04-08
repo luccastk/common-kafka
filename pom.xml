@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.pulsar.common</groupId>
 	<artifactId>common-kafka</artifactId>
-	<version>0.0.2</version>
+	<version>0.0.8</version>
 	<packaging>jar</packaging>
 	<name>common-kafka-library</name>
 	<description>Custom lib kafka for pulsar project.</description>
@@ -58,6 +58,10 @@
 			<artifactId>spring-kafka-test</artifactId>
 			<version>3.3.3</version>
 			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-core</artifactId>
 		</dependency>
 	</dependencies>
 
