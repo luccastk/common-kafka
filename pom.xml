@@ -10,8 +10,9 @@
 	</parent>
 	<groupId>com.pulsar.common</groupId>
 	<artifactId>common-kafka</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<name>common-kafka</name>
+	<version>0.0.2</version>
+	<packaging>jar</packaging>
+	<name>common-kafka-library</name>
 	<description>Custom lib kafka for pulsar project.</description>
 	<url/>
 	<licenses>
@@ -30,10 +31,6 @@
 		<java.version>17</java.version>
 	</properties>
 	<dependencies>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter</artifactId>
-		</dependency>
 		<dependency>
 			<groupId>org.springframework.kafka</groupId>
 			<artifactId>spring-kafka</artifactId>
@@ -55,15 +52,20 @@
 			<artifactId>jackson-databind</artifactId>
 			<version>2.18.3</version>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.springframework.kafka/spring-kafka-test -->
+		<dependency>
+			<groupId>org.springframework.kafka</groupId>
+			<artifactId>spring-kafka-test</artifactId>
+			<version>3.3.3</version>
+			<scope>test</scope>
+		</dependency>
 	</dependencies>
 
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-			</plugin>
-		</plugins>
-	</build>
-
+	<distributionManagement>
+		<repository>
+			<id>github</id>
+			<name>Github luccastk Apache Maven Package</name>
+			<url>https://maven.pkg.github.com/luccastk/common-kafka</url>
+		</repository>
+	</distributionManagement>
 </project>
