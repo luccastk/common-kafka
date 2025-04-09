@@ -29,9 +29,9 @@ public class KafkaBaseConfig {
 
         Map<String, Object> config = new HashMap<>();
         config.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, bootStrapServer);
-        config.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class);
+        config.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, JsonSerializer.class);
         config.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, JsonSerializer.class);
-        config.put(JsonSerializer.ADD_TYPE_INFO_HEADERS, true);
+        config.put(JsonSerializer.ADD_TYPE_INFO_HEADERS, false);
         return new DefaultKafkaProducerFactory<>(config);
     }
 
@@ -49,7 +49,7 @@ public class KafkaBaseConfig {
 
         return new DefaultKafkaConsumerFactory<>(
                 props,
-                new StringDeserializer(),
+                new JsonDeserializer<>(),
                 new JsonDeserializer<>(type)
         );
     }
