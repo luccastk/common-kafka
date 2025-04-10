@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.pulsar.common</groupId>
 	<artifactId>common-kafka</artifactId>
-	<version>0.0.8</version>
+	<version>0.1.1</version>
 	<packaging>jar</packaging>
 	<name>common-kafka-library</name>
 	<description>Custom lib kafka for pulsar project.</description>
